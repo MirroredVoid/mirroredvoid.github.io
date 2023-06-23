@@ -12,7 +12,7 @@ tags:
 
 测试帖子
 ![Image 1](RenshiCover.jpg)
-此处放一个一个一个一个一个音频测试
+此处放一个一个一个一个一个音频测试+623
 
 1.直接放音乐播放器：
 ​<audio id="aa" controls="" preload="none" style="width:100%">
