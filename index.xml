@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MirroredVoid's Archives</title><link>https://mirroredvoid.github.io/</link><description>Recent content on MirroredVoid's Archives</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 20 Jun 2023 23:30:40 +0000</lastBuildDate><atom:link href="https://mirroredvoid.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>颤音频率计算器</title><link>https://mirroredvoid.github.io/p/vibr-calc/</link><pubDate>Tue, 20 Jun 2023 23:30:40 +0000</pubDate><guid>https://mirroredvoid.github.io/p/vibr-calc/</guid><description>&lt;p>颤音频率计算器，测试博客页面里插入一整个html文件的可行度&lt;/p>
+&lt;script>
+function Calc(bpm,n){
+var r = Array(2)
+r[1] = 60000/(bpm*n)
+r[0] = 1000/r[1]
+return r
+}
+function Main(){
+var bpm = document.getElementById('bpm').value;
+var n = document.getElementById('n').value;
+var c = Calc(bpm,n)
+document.getElementById('f1').innerText = c[0].toFixed(3)
+document.getElementById('t1').innerText = c[1].toFixed(3)
+c = Calc(bpm,2)
+document.getElementById('f2').innerText = c[0].toFixed(3)
+document.getElementById('t2').innerText = c[1].toFixed(3)
+c = Calc(bpm,3)
+document.getElementById('f3').innerText = c[0].toFixed(3)
+document.getElementById('t3').innerText = c[1].toFixed(3)
+c = Calc(bpm,4)
+document.getElementById('f4').innerText = c[0].toFixed(3)
+document.getElementById('t4').innerText = c[1].toFixed(3)
+}
+&lt;/script>
+&lt;style scoped>
+.link{
+text-decoration: none;
+}
+div.line{
+background:rgba(167, 167, 167, 0.5);
+width: 100%;
+margin-top:12px;
+margin-bottom:12px;
+height:2px;
+}
+div.part{
+display: inline-block;
+margin: 8px;
+margin-top: 2px;
+margin-bottom: 2px;
+}
+div.block{
+background:rgba(232, 232, 232, 0.5);
+border-radius: 16px;
+padding: 16px;
+margin: 16px;
+}
+div.c{
+margin-top: 3px;
+margin-bottom: 3px;
+padding: 3px;
+padding-left: 16px;
+padding-right: 16px;
+border-radius: 12px;
+background-color: #FFF;
+font-size: 100%;
+}
+span.d{
+border-radius: 24px;
+background-color: aqua;
+color: cornflowerblue;
+font-weight: bold;
+float: right;
+padding-left: 12px;
+padding-right: 12px;
+}
+span.r{
+font-family:monospace;
+margin-right: 16px;
+float: right;
+}
+button{
+width: 100%;
+height: 108px;
+margin-top: 6px;
+margin-bottom: 6px;
+border: transparent;
+border-radius: 12px;
+font-size: 240%;
+padding: 6px;
+background-color:deepskyblue;
+color:#FFF;
+-webkit-transition: 0.2s;
+transition: 0.2s;
+}
+button:active{
+background-color:cornflowerblue;
+}
+input{
+width: 100%;
+font-size: 120%;
+margin-top: 6px;
+margin-bottom: 6px;
+padding: 6px;
+padding-left: 16px;
+padding-right: 16px;
+border: transparent;
+border-radius: 12px;
+float: right;
+-webkit-transition: 0.2s;
+transition: 0.2s;
+outline: none;
+}
+input:focus {
+background-color: aqua;
+}
+label{
+font-size: 120%;
+height: 32px;
+margin-top: 6px;
+margin-bottom: 6px;
+padding: 6px;
+float: left;
+}
+&lt;/style>
+&lt;div style="font-size:120%;">
+&lt;div id="title" class="block">
+&lt;div style="font-size: 160%;">颤音频率周期计算器&lt;/div>
+&lt;div class="line">&lt;/div>
+&lt;div style="color: rgb(167, 167, 167);">“ 波数 ” 指每 1/4 音符长度中包含的颤音周期数量。&lt;/div>
+&lt;/div>
+&lt;div id="form" class="block" style="padding-bottom:12px;">
+&lt;div class="part" style="width: 100px;">
+&lt;label for="bpm">BPM&lt;/label>
+&lt;label for="n">波数&lt;/label>
+&lt;/div>
+&lt;div class="part" style="width: 32%; float: right; padding-left: 2%;">
+&lt;button id="Main" onclick="Main()" type='button'>计 算&lt;/button>
+&lt;/div>
+&lt;div class="part" style="width: 48%; float: right;">
+&lt;input id="bpm" type="number" placeholder="BPM" value = "120" min="10" max="999" step="0.001">
+&lt;input id="n" type="number" placeholder="波数" value = "2" min="0.001" max="99" step="0.001">
+&lt;/div>
+&lt;/div>
+&lt;div id="out1" class="block">
+&lt;div style="font-size: 120%;">计算结果&lt;/div>
+&lt;div class="line">&lt;/div>
+&lt;div class="part" style="width: 48%;">
+&lt;div class="c">
+频率
+&lt;span class="d">Hz&lt;/span>
+&lt;span class="r" id="f1">---&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;div class="part" style="width:48%; float: right;">
+&lt;div class="c">
+周期
+&lt;span class="d">ms&lt;/span>
+&lt;span class="r" id="t1">---&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div id="out2" class="block" style="padding-bottom:12px;">
+&lt;div style="font-size: 120%;">常用结果&lt;/div>
+&lt;div class="line">&lt;/div>
+&lt;div class="part" style="width: 140px;">
+&lt;label>波数 = 2&lt;/label>
+&lt;label>波数 = 3&lt;/label>
+&lt;label>波数 = 4&lt;/label>
+&lt;/div>
+&lt;div class="part" style="width:25%; float: right; padding-left: 2%;">
+&lt;div class="c">
+周期
+&lt;span class="d">ms&lt;/span>
+&lt;span class="r" id="t2">---&lt;/span>
+&lt;/div>
+&lt;div class="c">
+周期
+&lt;span class="d">ms&lt;/span>
+&lt;span class="r" id="t3">---&lt;/span>
+&lt;/div>
+&lt;div class="c">
+周期
+&lt;span class="d">ms&lt;/span>
+&lt;span class="r" id="t4">---&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;div class="part" style="width: 25%; float: right;">
+&lt;div class="c">
+频率
+&lt;span class="d">Hz&lt;/span>
+&lt;span class="r" id="f2">---&lt;/span>
+&lt;/div>
+&lt;div class="c">
+频率
+&lt;span class="d">Hz&lt;/span>
+&lt;span class="r" id="f3">---&lt;/span>
+&lt;/div>
+&lt;div class="c">
+频率
+&lt;span class="d">Hz&lt;/span>
+&lt;span class="r" id="f4">---&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;a href="https://space.bilibili.com/510484022" class="link">
+&lt;div class="block" style="color: rgb(167, 167, 167);">
+Bilibili @MirroredVoid
+&lt;/div>
+&lt;/a>
+&lt;/div>
+&lt;!-- &lt;/html> --></description></item><item><title>帖子中插入音频播放测试页</title><link>https://mirroredvoid.github.io/p/first-post/</link><pubDate>Wed, 14 Jun 2023 12:59:40 +0000</pubDate><guid>https://mirroredvoid.github.io/p/first-post/</guid><description>&lt;img src="https://mirroredvoid.github.io/p/first-post/CoverTest.jpg" alt="Featured image of post 帖子中插入音频播放测试页" />&lt;p>测试帖子
+&lt;img src="https://mirroredvoid.github.io/p/first-post/RenshiCover.jpg"
+width="1920"
+height="1080"
+srcset="https://mirroredvoid.github.io/p/first-post/RenshiCover_hu0880829baaf9e42bb046bface8c1b11c_1496961_480x0_resize_q75_box.jpg 480w, https://mirroredvoid.github.io/p/first-post/RenshiCover_hu0880829baaf9e42bb046bface8c1b11c_1496961_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Image 1"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+>
+此处放一个一个一个一个一个音频测试+623&lt;/p>
+&lt;p>1.直接放音乐播放器：
+​&lt;audio id="aa" controls="" preload="none" style="width:100%">
+&lt;source id="mp3" src="Renshi_MixingF.mp3">
+&lt;/audio>&lt;/p>
+&lt;p>2.用一个按钮触发音频
+&lt;span class='article-category'>
+&lt;a href="#" onClick="var au=document.getElementById('aa');au.play()">12345&lt;/a>
+&lt;a href="#" onClick="var au=document.getElementById('aa');au.play()" style="background-color: #66bb6a;">67890&lt;/a>
+&lt;/span>&lt;/p>
+&lt;p>3.点击图片触发音频
+&lt;span class='article-category'>
+&lt;a href="#" onClick="var au=document.getElementById('aa');au.play()" style="width:40%">
+&lt;img src="RenshiCover.jpg">&lt;/img>
+&lt;/a>
+&lt;/span>&lt;/p>
+&lt;blockquote>
+&lt;p>备用&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="备用">备用&lt;/h1>
+&lt;h2 id="备用-1">备用&lt;/h2>
+&lt;h3 id="备用-2">备用&lt;/h3>
+&lt;hr>
+&lt;hr></description></item><item><title>Archives</title><link>https://mirroredvoid.github.io/archives/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://mirroredvoid.github.io/archives/</guid><description/></item><item><title>Hello World</title><link>https://mirroredvoid.github.io/p/hello-world/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://mirroredvoid.github.io/p/hello-world/</guid><description>&lt;img src="https://mirroredvoid.github.io/p/hello-world/cover.jpg" alt="Featured image of post Hello World" />&lt;p>Welcome to Hugo theme Stack. This is your first post. Edit or delete it, then start writing!&lt;/p>
+&lt;p>For more information about this theme, check the documentation: &lt;a class="link" href="https://docs.stack.jimmycai.com/" target="_blank" rel="noopener"
+>https://docs.stack.jimmycai.com/&lt;/a>&lt;/p>
+&lt;p>Want a site like this? Check out &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack-starter" target="_blank" rel="noopener"
+>hugo-theme-stack-stater&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>Photo by &lt;a class="link" href="https://unsplash.com/@pawel_czerwinski" target="_blank" rel="noopener"
+>Pawel Czerwinski&lt;/a> on &lt;a class="link" href="https://unsplash.com/" target="_blank" rel="noopener"
+>Unsplash&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>Links</title><link>https://mirroredvoid.github.io/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mirroredvoid.github.io/links/</guid><description>&lt;p>To use this feature, add &lt;code>links&lt;/code> section to frontmatter.&lt;/p>
+&lt;p>This page&amp;rsquo;s frontmatter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">links&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub is the world&amp;#39;s largest software development platform.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.com&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://www.typescriptlang.org&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ts-logo-128.jpg&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;code>image&lt;/code> field accepts both local and external images.&lt;/p></description></item><item><title>Search</title><link>https://mirroredvoid.github.io/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mirroredvoid.github.io/search/</guid><description/></item></channel></rss>

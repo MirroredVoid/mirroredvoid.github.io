@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>含音频 on MirroredVoid's Archives</title><link>https://mirroredvoid.github.io/tags/%E5%90%AB%E9%9F%B3%E9%A2%91/</link><description>Recent content in 含音频 on MirroredVoid's Archives</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 14 Jun 2023 12:59:40 +0000</lastBuildDate><atom:link href="https://mirroredvoid.github.io/tags/%E5%90%AB%E9%9F%B3%E9%A2%91/index.xml" rel="self" type="application/rss+xml"/><item><title>帖子中插入音频播放测试页</title><link>https://mirroredvoid.github.io/p/first-post/</link><pubDate>Wed, 14 Jun 2023 12:59:40 +0000</pubDate><guid>https://mirroredvoid.github.io/p/first-post/</guid><description>&lt;img src="https://mirroredvoid.github.io/p/first-post/CoverTest.jpg" alt="Featured image of post 帖子中插入音频播放测试页" />&lt;p>测试帖子
+&lt;img src="https://mirroredvoid.github.io/p/first-post/RenshiCover.jpg"
+width="1920"
+height="1080"
+srcset="https://mirroredvoid.github.io/p/first-post/RenshiCover_hu0880829baaf9e42bb046bface8c1b11c_1496961_480x0_resize_q75_box.jpg 480w, https://mirroredvoid.github.io/p/first-post/RenshiCover_hu0880829baaf9e42bb046bface8c1b11c_1496961_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Image 1"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+>
+此处放一个一个一个一个一个音频测试+623&lt;/p>
+&lt;p>1.直接放音乐播放器：
+​&lt;audio id="aa" controls="" preload="none" style="width:100%">
+&lt;source id="mp3" src="Renshi_MixingF.mp3">
+&lt;/audio>&lt;/p>
+&lt;p>2.用一个按钮触发音频
+&lt;span class='article-category'>
+&lt;a href="#" onClick="var au=document.getElementById('aa');au.play()">12345&lt;/a>
+&lt;a href="#" onClick="var au=document.getElementById('aa');au.play()" style="background-color: #66bb6a;">67890&lt;/a>
+&lt;/span>&lt;/p>
+&lt;p>3.点击图片触发音频
+&lt;span class='article-category'>
+&lt;a href="#" onClick="var au=document.getElementById('aa');au.play()" style="width:40%">
+&lt;img src="RenshiCover.jpg">&lt;/img>
+&lt;/a>
+&lt;/span>&lt;/p>
+&lt;blockquote>
+&lt;p>备用&lt;/p>
+&lt;/blockquote>
+&lt;h1 id="备用">备用&lt;/h1>
+&lt;h2 id="备用-1">备用&lt;/h2>
+&lt;h3 id="备用-2">备用&lt;/h3>
+&lt;hr>
+&lt;hr></description></item></channel></rss>
